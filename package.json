@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "doki-ui": "^1.0.0",
+    "vitepress": "^1.4.1"
+  },
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  }
+}
