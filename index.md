@@ -8,7 +8,7 @@ hero:
   text: "A simple personal component lib."
   tagline: with banGDream
   image:
-    src: /public/logo.gif
+    src: /logo.gif
     alt: logo
   actions:
     - theme: brand
