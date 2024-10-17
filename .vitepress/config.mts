@@ -4,7 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Doki-UI Docs",
   description: "A simple personal component lib.",
-  base: '/dokiDocs',
+  base: '/dokiDocs/',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
