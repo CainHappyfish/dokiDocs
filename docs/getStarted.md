@@ -24,8 +24,8 @@ createApp(App).use(DokiUI).mount('#app')
 
 ```vue
 <script setup lang="ts">
-  // import {dokiButton, dokiMessage, dokiMessagebox} from "doki-ui";
-  import {dokiMessage, dokiMessagebox} from "../../Doki-UI/Doki-UI";
+  import {dokiMessage, dokiMessagebox} from "doki-ui";
+
 
   const onClick = () => {
     dokiMessagebox.confirm("Info", "This is a info", {
