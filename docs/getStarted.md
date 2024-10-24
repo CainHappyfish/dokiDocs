@@ -6,41 +6,58 @@
 
 ```bash
 # 本体
-npm install -D doki-ui
-# 依赖
-npm install -D @vitejs/plugin-vue axios sass typescript vite vite-plugin-dts vue-tsc
+npm install -S doki-ui
 ```
 
 在Vue项目文件`main.ts`中：
 
 ```typescript
-  import { createApp } from 'vue'
-  // import './style.css'
-  import App from './App.vue'
-  import DokiUI from "doki-ui/dist/doki-ui.js"
-  import "doki-ui/dist/style.css"
-  import "doki-ui/src/styles/index.scss"
-  
-  createApp(App).use(DokiUI).mount('#app')
+import { createApp } from 'vue'
+import App from './App.vue'
+import DokiUI from "doki-ui"
+import "doki-ui/style.css"
+
+createApp(App).use(DokiUI).mount('#app')
 ```
 
-使用样例可以在`app.vue`中添加`preview`组件：
+然后就可以正常使用了：
 
 ```vue
 <script setup lang="ts">
-  import preview from "doki-ui/src/preview.vue"
+  // import {dokiButton, dokiMessage, dokiMessagebox} from "doki-ui";
+  import {dokiMessage, dokiMessagebox} from "../../Doki-UI/Doki-UI";
+
+  const onClick = () => {
+    dokiMessagebox.confirm("Info", "This is a info", {
+      confirmButtonText: "OK",
+    })
+        .then(() => {
+          dokiMessage({
+            type: "info",
+            message: "confirm"
+          })
+        })
+  }
 </script>
 
 <template>
-  <preview />
-
+  <doki-button @click="onClick">button</doki-button>
+  <doki-button type="info" @click="onClick">button</doki-button>
+  <doki-button type="success" @click="onClick">button</doki-button>
+  <doki-button type="warning" @click="onClick">button</doki-button>
+  <doki-button type="danger" @click="onClick">button</doki-button>
+  <doki-input />
+  <doki-link type="danger"/>
+  <doki-tag>tag</doki-tag>
+  <doki-alert>ALERT</doki-alert>
 </template>
 
 <style scoped>
 
 </style>
+
 ```
 
-然后运行你的项目， 就可以看到预览界面了：
+部分预览：
 
 ![](https://pic.imgdb.cn/item/670fe8f2d29ded1a8c71cf76.png)
